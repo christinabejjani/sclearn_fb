@@ -4,7 +4,7 @@
 
 This experiment was run in January 2019 on Amazon Mechanical Turk.
 
-If I had infinite time, I would have made this code more efficient. For example, I would've gotten rid of all the code that is currently "separate" from the main task code and I would use the same functions. So you could say there is a lot of extra lines that didn't need to be there if I'd been more dedicated to cleaner expt code.
+If I had infinite time, I would have made this code more efficient. For example, I would've gotten rid of all the code that is currently "separate" from the main task code and I would use the same functions for the practice and main task instead of repeating code like that. So you could say there is a lot of extra lines that didn't need to be there if I'd been more dedicated to cleaner expt code.
 
 We counterbalanced across feedback group (no feedback/feedback) and image assignment to congruency context (i.e., so that the bear + bird were both mostly incongruent and mostly congruent at least once). That's why there are 6 versions per feedback group.
 
