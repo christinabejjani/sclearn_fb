@@ -26,14 +26,6 @@
 	var Stimuli6 = [];
 	var Stimuli7 = [];
 	var Stimuli8 = [];
-	var Stimuli9 = [];
-	var Stimuli10 = [];
-	var Stimuli11 = [];
-	var Stimuli12 = [];
-	var Stimuli13 = [];
-	var Stimuli14 = [];
-	var Stimuli15 = [];
-	var Stimuli16 = [];
 	var StroopNum = [];
 	var StimProbBlock1 = [];
 	var StimProbBlock2 = [];
