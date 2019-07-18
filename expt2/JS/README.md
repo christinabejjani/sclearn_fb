@@ -2,7 +2,7 @@
 
 *Please contact me at christina.bejjani AT duke.edu if you are planning on using this code for an experiment.* 
 
-This experiment was run in January 2019 on Amazon Mechanical Turk.
+E2a was run in January 2019 on Amazon Mechanical Turk. E2b was run in June 2019 on MTurk.
 
 If I had infinite time, I would have made this code more efficient. For example, I would've made each version its own thing; I'd have replaced my if statements within each version so that there are fewer lines that aren't relevant to a particular task version's code.
 
