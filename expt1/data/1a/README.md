@@ -1,4 +1,4 @@
-# Data from Expt 1:
+# Data from Expt 1a:
 
 * Here, you'll find:
   * the compiled csv data of all participants for the expt (Note: these are not the averaged means, but in fact, include all the trials);
