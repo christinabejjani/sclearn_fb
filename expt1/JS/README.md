@@ -2,7 +2,7 @@
 
 *Please contact me at christina.bejjani AT duke.edu if you are planning on using this code for an experiment.* 
 
-This experiment was run in January 2019 on Amazon Mechanical Turk.
+E1a was run in January 2019 on Amazon Mechanical Turk. E1b was run in June 2019 on MTurk. Files that are common to both are listed here (e.g., the task stimuli, jquery, etc.).
 
 If I had infinite time, I would have made this code more efficient. For example, I would've gotten rid of all the code that is currently "separate" from the main task code and I would use the same functions for the practice and main task instead of repeating code like that. So you could say there is a lot of extra lines that didn't need to be there if I'd been more dedicated to cleaner expt code.
 
