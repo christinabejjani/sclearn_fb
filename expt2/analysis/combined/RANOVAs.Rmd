@@ -1,0 +1,90 @@
+---
+title: "RANOVAs"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+setwd("C:/Users/cb383/Desktop/YearThree/controllearning/fbproject/lwpc_combined/data/csvdata")
+
+library(methods)
+library(BayesFactor)
+library(BFEffects)
+```
+
+
+```{r RT LWPC ANOVA}
+rawRTData_T <- read.csv('SCT_ANOVA_RT.csv')
+rawRTData_T$RT <- as.numeric(as.character(rawRTData_T$RT))
+
+rawRTData_T <- within(rawRTData_T, {
+  subject <- factor(subject)
+  Congruency <- factor(Congruency)
+  BlockType <- factor(BlockType)
+   Feedback <- factor(Feedback)
+    BlockOrder <- factor(BlockOrder)
+    Experiment <- factor(Experiment)
+})
+
+SCT_RT_runANOVA <- anovaBF(RT ~ BlockType*Congruency*Feedback*BlockOrder*Experiment + subject,
+                                  data=rawRTData_T,
+                                  whichRandom="subject")
+
+png(file="Bayes_SCT_RT.png", width = 3000, height = 700, res = 60)
+plot(SCT_RT_runANOVA)
+dev.off()
+#print(SCT_RT_runANOVA)
+print(inclusionBF(SCT_RT_runANOVA))
+```
+
+
+```{r ACCURACY LWPC ANOVA}
+rawACCData_T <- read.csv('SCT_ANOVA_ACC.csv')
+rawACCData_T$Accuracy <- as.numeric(as.character(rawACCData_T$Accuracy))
+
+rawACCData_T <- within(rawACCData_T, {
+  subject <- factor(subject)
+  Congruency <- factor(Congruency)
+  BlockType <- factor(BlockType)
+    Feedback <- factor(Feedback)
+    BlockOrder <- factor(BlockOrder)
+    Experiment <- factor(Experiment)
+})
+
+SCT_ACC_runANOVA <- anovaBF(Accuracy ~ BlockType*Congruency*Feedback*BlockOrder*Experiment + subject,
+                                  data=rawACCData_T,
+                                  whichRandom="subject")
+
+png(file="Bayes_SCT_ACC.png", width = 3000, height = 700, res = 60)
+plot(SCT_ACC_runANOVA)
+dev.off()
+#print(SCT_ACC_runANOVA)
+print(inclusionBF(SCT_ACC_runANOVA))
+```
+
+```{r INVERSE EFFICIENCY ANOVA}
+
+IEdata_T <- read.csv('IE_transfer.csv')
+IEdata_T$IE <- as.numeric(as.character(IEdata_T$IE))
+
+IEdata_T <- within(IEdata_T, {
+  SubjectID <- factor(SubjectID)
+  CueType <- factor(CueType)
+  TrialType <- factor(TrialType)
+  Feedback <- factor(Feedback)
+  BlockOrder <- factor(BlockOrder)
+    Experiment <- factor(Experiment)
+})
+
+SC_IET_runANOVA <- anovaBF(IE ~ CueType*TrialType*Feedback*BlockOrder*Experiment + SubjectID,
+                           data=IEdata_T,
+                           whichRandom="SubjectID")
+
+png(file="Bayes_SC_IE_T.png", width = 3000, height = 700, res = 60)
+plot(SC_IET_runANOVA)
+dev.off()
+#print(SC_IET_runANOVA) #this will have like 7000 models, so we'll skip printing that all out
+print(inclusionBF(SC_IET_runANOVA))
+
+```
